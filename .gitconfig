@@ -1,0 +1,5 @@
+[user]
+	name = Marco Jahn
+	email = marco.jahn@gmail.com
+[credential]
+	helper = osxkeychain
