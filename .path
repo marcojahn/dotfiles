@@ -19,4 +19,5 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 #zsh completion has been installed to:
 #  /usr/local/share/zsh/site-functions
 
+#http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html
 export JAVA_HOME="$(/usr/libexec/java_home)"
