@@ -3,3 +3,5 @@
 	email = marco.jahn@gmail.com
 [credential]
 	helper = osxkeychain
+[push]
+	default = matching
