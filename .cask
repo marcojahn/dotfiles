@@ -1,0 +1,17 @@
+#Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+function installcask() {
+	brew cask install "${@}" 2> /dev/null
+}
+
+installcask adium
+#installcask clean-my-mac
+installcask dropbox
+installcask firefox
+installcask google-chrome
+installcask sublime-text
+installcask the-unarchiver
+installcask virtualbox
+installcaks vlc
