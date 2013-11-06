@@ -11,6 +11,9 @@ brew upgrade
 brew install coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
+brew tap homebrew/dupes
+brew install apple-gcc42
+
 # node js
 # Using nodejs through nvm
 # http://dreamerslab.com/blog/en/how-to-setup-a-node-js-development-environment-on-mac-osx-lion/
