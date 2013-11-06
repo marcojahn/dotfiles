@@ -1,7 +1,12 @@
-[user]
-	name = Marco Jahn
-	email = marco.jahn@gmail.com
 [credential]
 	helper = osxkeychain
 [push]
 	default = matching
+[core]
+	excludesfile = /Users/mjahn/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
