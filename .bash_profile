@@ -9,6 +9,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# source nvm
+. ~/.nvm/nvm.sh
+
 # Case-insensitive globbing (used in pathname expansion)
 #OFF#shopt -s nocaseglob
 
@@ -36,4 +39,4 @@ unset file
 #OFF#scomplete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
 # If possible, add tab completion for many more commands
-#OFF#s[ -f /etc/bash_completion ] && source /etc/bash_completion
+#OFF#s[ -f /etc/bash_completion ] && source /etc/bash_completion. ~/.nvm/nvm.sh
