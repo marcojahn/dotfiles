@@ -40,3 +40,17 @@ unset file
 
 # If possible, add tab completion for many more commands
 #OFF#s[ -f /etc/bash_completion ] && source /etc/bash_completion. ~/.nvm/nvm.sh
+
+#proxy settings
+export LOCATION=$(/usr/sbin/scselect 2>&1 | perl -ne 'if (m/^\s+\*\s+(\S+)\s+\((.+)\)$/) { print "$2\n"; }')
+if [ ! -z "$LOCATION" -a "$LOCATION" = "Merck R&D" ]; then
+	. ~/_env/proxy_merck
+	# https://answers.atlassian.com/questions/14932/using-proxies-with-sourcetree
+	# TODO copy .hgrc with proxy settings for sourcetree
+	# TODO copy .gitconfig with proxy settings for sourcetree
+	# TODO use base config files with string replacement
+else
+	. ~/_env/no_proxy
+	# TODO restore initial .hgrc
+	# TODO restore initial .gitconfig
+fi
