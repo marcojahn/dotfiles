@@ -42,6 +42,7 @@ unset file
 #OFF#s[ -f /etc/bash_completion ] && source /etc/bash_completion. ~/.nvm/nvm.sh
 
 #proxy settings
+# http://arstechnica.com/civis/viewtopic.php?f=19&t=147601
 export LOCATION=$(/usr/sbin/scselect 2>&1 | perl -ne 'if (m/^\s+\*\s+(\S+)\s+\((.+)\)$/) { print "$2\n"; }')
 if [ ! -z "$LOCATION" -a "$LOCATION" = "Merck R&D" ]; then
 	. ~/_env/proxy_merck
