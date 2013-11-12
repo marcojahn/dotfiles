@@ -11,6 +11,7 @@ installcask adium
 installcask dropbox
 installcask firefox
 installcask google-chrome
+installcask iterm2
 installcask sublime-text
 installcask the-unarchiver
 installcask virtualbox
