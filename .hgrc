@@ -2,6 +2,18 @@
 username=Marco Jahn <marco.jahn@gmail.com>
 ssh = ssh -C
 
+[extensions]
+# http://mercurial.selenic.com/wiki/ColorExtension
+color =
+
+#[color]
+#status.modified = blue bold underline red_background
+#status.added = green bold
+#status.removed = red bold blue_background
+#status.deleted = cyan bold underline
+#status.unknown = magenta bold underline
+#status.ignored = black bold
+
 # TODO change to SSL
 # https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678
 # SSH must use proxy
