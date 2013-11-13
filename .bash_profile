@@ -13,20 +13,20 @@ unset file
 . ~/.nvm/nvm.sh
 
 # Case-insensitive globbing (used in pathname expansion)
-#OFF#shopt -s nocaseglob
+shopt -s nocaseglob
 
 # Append to the Bash history file, rather than overwriting it
-#OFF#sshopt -s histappend
+shopt -s histappend
 
 # Autocorrect typos in path names when using `cd`
-#OFF#sshopt -s cdspell
+shopt -s cdspell
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
-#OFF#sfor option in autocd globstar; do
-#OFF#s	shopt -s "$option" 2> /dev/null
-#OFF#sdone
+for option in autocd globstar; do
+        shopt -s "$option" 2> /dev/null
+done
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 #OFF#s[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
