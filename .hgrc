@@ -6,13 +6,13 @@ ssh = ssh -C
 # http://mercurial.selenic.com/wiki/ColorExtension
 color =
 
-#[color]
-#status.modified = blue bold underline red_background
-#status.added = green bold
-#status.removed = red bold blue_background
-#status.deleted = cyan bold underline
-#status.unknown = magenta bold underline
-#status.ignored = black bold
+[color]
+status.modified = green
+status.added = red
+status.removed = red
+status.deleted = red
+status.unknown = blue
+status.ignored = white
 
 # TODO change to SSL
 # https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678
