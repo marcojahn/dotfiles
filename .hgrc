@@ -5,6 +5,7 @@ ssh = ssh -C
 [extensions]
 # http://mercurial.selenic.com/wiki/ColorExtension
 color =
+shelve =
 
 [color]
 status.modified = green
