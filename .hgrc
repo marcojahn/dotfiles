@@ -1,11 +1,19 @@
+# using diffmerge
+# diffmerge will be availble using hg diffmerge
+# http://mercurial.selenic.com/wiki/DiffMerge
+
+# TODO use username by external .extra file
+
 [ui]
 username=Marco Jahn <marco.jahn@gmail.com>
 ssh = ssh -C
+merge = diffmerge
 
 [extensions]
 # http://mercurial.selenic.com/wiki/ColorExtension
 color =
-shelve =
+shelve=
+hgext.extdiff = 
 
 [color]
 status.modified = green
@@ -21,3 +29,13 @@ status.ignored = white
 
 [hostfingerprints]
 bitbucket.org=24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+
+[extdiff]
+cmd.diffmerge = /usr/bin/diffmerge
+
+[merge-tools]
+diffmerge.executable = /usr/bin/diffmerge
+diffmerge.args = -merge -result=$output -t1="Local Version" -t2=$output -t3="Other Version" -caption=$output $local $base $other
+diffmerge.binary = False
+diffmerge.symlinks = False
+diffmerge.gui = True
