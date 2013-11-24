@@ -42,3 +42,6 @@ brew install zopfli
 brew install htop
 
 #OFF#brew tap homebrew/versions
+
+brew install ffmpeg
+brew install youtube-dl
