@@ -43,5 +43,8 @@ brew install htop
 
 #OFF#brew tap homebrew/versions
 
+brew install git-flow-avh
+brew install git-flow-clone
+
 brew install ffmpeg
 brew install youtube-dl
