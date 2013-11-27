@@ -16,5 +16,6 @@ installcask google-chrome
 installcask iterm2
 installcask sublime-text
 installcask the-unarchiver
+installcask truecrypt
 installcask virtualbox
 installcaks vlc
