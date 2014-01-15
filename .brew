@@ -48,3 +48,6 @@ brew install git-flow-clone
 
 brew install ffmpeg
 brew install youtube-dl
+
+brew install python
+# pip install pygments (used for Sublime + SublimeHighlight)

@@ -12,6 +12,7 @@ installcask cocoa-rest-client
 installcask cyberduck
 installcask dropbox
 installcask firefox
+installcask freemind
 installcask google-chrome
 installcask iterm2
 installcask sublime-text
