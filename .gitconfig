@@ -4,6 +4,9 @@
 	default = matching
 [core]
 	excludesfile = /Users/mjahn/.gitignore_global
+	# Make `git rebase` safer on OS X
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
