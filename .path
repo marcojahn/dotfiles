@@ -26,3 +26,6 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # to switch to JDK 1.6 uncomment
 # export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
 export JAVA_HOME="$(/usr/libexec/java_home)"
+
+# ruby
+export PATH=$(brew --prefix ruby)/bin:$PATH
