@@ -53,3 +53,8 @@ brew install python
 # pip install pygments (used for Sublime + SublimeHighlight)
 
 brew install p7zip
+
+brew install ruby
+
+brew tap peco/peco
+brew install peco
