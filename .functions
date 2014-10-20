@@ -65,3 +65,8 @@ function tre() {
 function gi() {
         curl -L -s https://www.gitignore.io/api/$@ ;
 }
+
+# Shorthand function for Docker interaction
+function docker-ip () {
+        boot2docker ip 2> /dev/null
+}
