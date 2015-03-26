@@ -1,6 +1,11 @@
 # Link Homebrew casks in '/Applications' rather than '~/Applications'
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# nvm use will create a symlink which points to your currenlty used node version
+# for use in IDE use the creawted current symlink + /bin/node
+# /Users/mjahn/.nvm/current/bin/node
+export NVM_SYMLINK_CURRENT=true
+
 export GITFLOW_DIR=/usr/local/bin
 
 export DOCKER_HOST="tcp://boot2docker:2376"
