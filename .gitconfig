@@ -1,20 +1,82 @@
+[alias]
+	#
+	# http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+	# https://gist.github.com/mwhite/6887990
+	#
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+	# View the current working tree status using the short format
+	s = status -s
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[core]
+	# Use custom `.gitignore` and `.gitattributes`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+
+[color]
+	ui = true
+
+[diff]
+	# Detect copies as well as renames
+	renames = copies
+
+[help]
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
 [credential]
 	helper = osxkeychain
+
 [push]
+	# Use the Git 1.x.x default to avoid errors on machines with old Git
+	# installations. To use `simple` instead, add this to your `~/.extra` file:
+	# `git config --global push.default simple`. See http://git.io/mMah-w.
 	default = matching
-[core]
-	excludesfile = /Users/mjahn/.gitignore_global
-	# Make `git rebase` safer on OS X
-    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-    trustctime = false
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
 [user]
 	name = Marco Jahn
 	email = marco.jahn@gmail.com
-[color]
-	ui = true
