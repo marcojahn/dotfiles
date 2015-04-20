@@ -72,5 +72,5 @@ function docker-ip () {
 }
 
 function brewupgrade () {
-        brew upgrade "$1" && brew cleanup "$1 && brew outdated"
+        brew upgrade "$1" && brew cleanup "$1" && brew outdated
 }
