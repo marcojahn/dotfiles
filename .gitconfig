@@ -21,7 +21,8 @@
 	contributors = shortlog --summary --numbered
 
 	# Commit all changes
-	ca = !git add -A && git commit -av
+	#ca = !git add -A && git commit -av
+	ac = !git add . && git commit -am
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -29,7 +30,7 @@
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/mjahn/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -44,6 +45,9 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+
+	# Prevent file permissions (changes) to be synced (e.g. chmod...)
+	filemode = false
 
 [color]
 	ui = true
