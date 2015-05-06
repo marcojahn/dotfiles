@@ -74,3 +74,18 @@ function docker-ip () {
 function brewupgrade () {
         brew upgrade "$1" && brew cleanup "$1" && brew outdated
 }
+
+function calcExtJSFileCount() {
+        local result=$(find -E app.js app ux overrides sass packages/mytheme -regex '.*\.(js|scss)' 2>/dev/null | wc -l)
+        echo "File count: ${result}"
+}
+
+function calcExtJSLineCount() {
+        local result=$(find -E app.js app ux overrides sass packages/mytheme regex '.*\.(js|scss)' -exec cat {} \; 2>/dev/null | wc -l)
+        echo "Line number count: ${result}"
+}
+
+function calcExtJSProject() {
+        calcExtJSFileCount
+        calcExtJSLineCount
+}
