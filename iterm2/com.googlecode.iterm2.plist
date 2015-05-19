@@ -321,9 +321,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>389 332 924 485 0 0 1440 877 </string>
+	<string>2191 286 924 485 1440 -300 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>298 77 991 666 0 0 1440 877 </string>
+	<string>351 149 907 656 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1135,9 +1135,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-11-16T10:58:21Z</date>
+	<date>2015-05-19T12:13:08Z</date>
 	<key>SUSkippedVersion</key>
-	<string>2.0.0.20141103</string>
+	<string>2.1.1</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -1189,6 +1189,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0</string>
+	<string>2.1</string>
 </dict>
 </plist>
