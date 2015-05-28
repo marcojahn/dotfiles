@@ -80,11 +80,20 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
 # Finder: show hidden files by default
 #OFF#defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -142,6 +151,17 @@ defaults write com.apple.dock autohide -bool true
 # Safari & WebKit                                                             #
 ###############################################################################
 
+# Privacy: don’t send search queries to Apple
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+
+# Press Tab to highlight each item on a web page
+defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
+
+# Show the full URL in the address bar (note: this still hides the scheme)
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+
 ###############################################################################
 # Mail                                                                        #
 ###############################################################################
@@ -179,6 +199,9 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
+# Expand the print dialog by default
+defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
+defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
 # Sublime Text                                                                #
@@ -198,6 +221,7 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" \
+        "Google Chrome" "Google Chrome Canary" \
         "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal" \
         "Transmission" "Twitter" "iCal"; do
         killall "${app}" > /dev/null 2>&1
