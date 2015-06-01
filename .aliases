@@ -88,3 +88,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 alias ia="open $1 -a /Applications/iA\ Writer.app"
+
+#alias for searching in files
+alias search='grep -rni'
