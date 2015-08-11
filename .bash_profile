@@ -64,16 +64,6 @@ else
 	# TODO restore initial .gitconfig
 fi
 
-#export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/4.0.2.67:$PATH
+export PATH="/Users/mjahn/bin/Sencha/Cmd:$PATH"
 
-export SENCHA_CMD_3_0_0="/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/5.0.3.324"
-
-#export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/4.0.3.74:$PATH
-
-#export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/4.0.4.84:$PATH
-
-#export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/5.0.0.116:$PATH
-
-#export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/5.0.0.160:$PATH
-
-export PATH=/Users/mjahn/SenchaCMD/bin/Sencha/Cmd/5.0.3.324:$PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

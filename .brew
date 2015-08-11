@@ -54,7 +54,8 @@ brew install python
 
 brew install p7zip
 
-brew install ruby
+brew install rbenv
+brew install ruby-build
 
 brew tap peco/peco
 brew install peco
