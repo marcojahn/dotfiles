@@ -98,3 +98,18 @@ function calcExtJSProject() {
         calcExtJSFileCount
         calcExtJSLineCount
 }
+
+function calcNodeJSProjectFileCount() {
+        local result=$(find -E ./ -regex '.*\.(js|scss)' -o -path .//node_modules -prune -o -path .//build -prune 2>/dev/null | wc -l)
+        echo "File count: ${result}"
+}
+
+function calcNodeJSProjectLineCount() {
+        local result=$(find -E ./ regex '.*\.(js|scss)' -exec cat {} \; -o -path .//node_modules -prune -o -path .//build -prune 2>/dev/null | wc -l)
+        echo "Line number count: ${result}"
+}
+
+function calcNodeJSProject() {
+        calcNodeJSProjectFileCount
+        calcNodeJSProjectLineCount
+}
