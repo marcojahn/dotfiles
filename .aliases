@@ -89,5 +89,7 @@ alias reload="exec $SHELL -l"
 
 alias ia="open $1 -a /Applications/iA\ Writer.app"
 
+alias macdown="open $1 -a /Applications/MacDown.app"
+
 #alias for searching in files
 alias search='grep -rni'
