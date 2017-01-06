@@ -6,8 +6,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # /Users/mjahn/.nvm/current/bin/node
 export NVM_SYMLINK_CURRENT=true
 
-export GITFLOW_DIR=/usr/local/bin
+#export GITFLOW_DIR=/usr/local/bin
 
-export DOCKER_HOST="tcp://boot2docker:2376"
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
+#export DOCKER_HOST="tcp://boot2docker:2376"
+#export DOCKER_TLS_VERIFY=1
+#export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"

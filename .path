@@ -5,8 +5,8 @@
 
 #PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-export PATH=$PATH:~/Development/adt/sdk/tools
-export PATH=$PATH:~/Development/adt/sdk/platform-tools
+#export PATH=$PATH:~/Development/adt/sdk/tools
+#export PATH=$PATH:~/Development/adt/sdk/platform-tools
 
 #Additionally, you can access their man pages with normal names if you add
 #the "gnuman" directory to your MANPATH from your bashrc as well:
@@ -14,10 +14,10 @@ export PATH=$PATH:~/Development/adt/sdk/platform-tools
 #MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 #For non-homebrew python (2.x), you need to amend your PYTHONPATH like so:
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+#export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 #Bash completion has been installed to:
-  /usr/local/etc/bash_completion.d
+#  /usr/local/etc/bash_completion.d
 
 #zsh completion has been installed to:
 #  /usr/local/share/zsh/site-functions
@@ -28,4 +28,4 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # ruby
-export PATH=$(brew --prefix ruby)/bin:$PATH
+#export PATH=$(brew --prefix ruby)/bin:$PATH

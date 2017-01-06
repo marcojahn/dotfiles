@@ -1,7 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
-# Add proper homebrew path at the front of the PATH
 export PATH="/usr/local/homebrew/bin:/usr/local/homebrew/sbin:$PATH"
 
 # Load the shell dotfiles, and then some:
@@ -12,8 +11,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-# source nvm
-. ~/.nvm/nvm.sh
+## nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 # Case-insensitive globbing (used in pathname expansion)
