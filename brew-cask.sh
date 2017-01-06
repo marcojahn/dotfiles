@@ -9,6 +9,7 @@ brew cask install iterm2
 brew cask install macdown
 brew cask install smcfancontrol
 brew cask install sublime-text
+brew cask install visual-studio-code
 brew cask install vlc
 
 brew tap caskroom/versions
