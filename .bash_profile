@@ -18,7 +18,6 @@ export NVM_DIR="$HOME/.nvm"
 
 ## sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
-#source "/Users/mjahn/.sdkman/bin/sdkman-init.sh"
 [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && . "$SDKMAN_DIR/bin/sdkman-init.sh" # This loads sdkman
 
 # Case-insensitive globbing (used in pathname expansion)
