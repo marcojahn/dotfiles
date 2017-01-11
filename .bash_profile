@@ -16,6 +16,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
+## sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+#source "/Users/mjahn/.sdkman/bin/sdkman-init.sh"
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && . "$SDKMAN_DIR/bin/sdkman-init.sh" # This loads sdkman
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
