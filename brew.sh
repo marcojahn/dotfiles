@@ -51,6 +51,8 @@ brew install woff2
 
 # Install other useful binaries.
 brew install ack
+brew install caddy
+brew install cloc
 brew install dark-mode
 #brew install exiv2
 brew install git
@@ -63,6 +65,7 @@ brew install imagemagick --with-webp
 brew install lua
 brew install lynx
 brew install p7zip
+brew install peco
 brew install pigz
 brew install pv
 brew install rbenv
@@ -75,10 +78,8 @@ brew install tree
 brew install vbindiff
 brew install webkit2png
 brew install youtube-dl
+brew install virtualhost.sh
 brew install zopfli
-
-brew tap peco/peco
-brew install peco
 
 # Remove outdated versions from the cellar.
 brew cleanup
