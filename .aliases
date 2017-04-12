@@ -104,3 +104,5 @@ alias macdown="open $1 -a /Applications/MacDown.app"
 
 #alias for searching in files
 alias search='grep -rni'
+
+alias convm4a2mp3='for f in *.m4a; do ffmpeg -i "$f" -acodec libmp3lame -ab 256k "${f%.m4a}.mp3"; done'
