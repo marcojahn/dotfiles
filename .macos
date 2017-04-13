@@ -85,8 +85,8 @@ sudo pmset -a sms 0
 #OFF-TBD#defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+# defaults write NSGlobalDomain KeyRepeat -int 1 # defaults is 2
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10 # default is 15
 
 ###############################################################################
 # Screen                                                                      #
