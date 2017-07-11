@@ -14,6 +14,7 @@ fi;
 prompt_git() {
 	local s='';
 	local branchName='';
+	local marks='';
 
 	# Check if the current directory is in a Git repository.
 	if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
@@ -36,13 +37,40 @@ prompt_git() {
 
 			# Check for untracked files.
 			if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-				s+='?';
+				s+="?";
 			fi;
+			# 📦 \U1F4E6
+			# ± \u00b1
+			# branch/upwards \ue0a0
+			# ➦ \u27a6
+			# ✘ \u2718
+			# ⚡ \u26a1
+			# ⚙ \u2699
+			# ⎇ \u2387
+			# ⬢ \U2B22
+			#
+			# ✔ is from https://unicode-table.com/en/blocks/dingbats/
+			# ⇡ 
+			# 	https://unicode-table.com/en/blocks/arrows/
+			#	https://unicode-table.com/en/sets/arrows-symbols/
 
 			# Check for stashed files.
 			if $(git rev-parse --verify refs/stash &>/dev/null); then
 				s+='$';
 			fi;
+
+			## diff checks (new)
+			# 
+
+		        # branch is modified?
+		        [ -n "$(git status --porcelain)" ] && marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
+
+		        # how many commits local branch is ahead/behind of remote?
+		        local stat="$(git status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
+		        local aheadN="$(echo $stat | grep -o 'ahead [[:digit:]]\+' | grep -o '[[:digit:]]\+')"
+		        local behindN="$(echo $stat | grep -o 'behind [[:digit:]]\+' | grep -o '[[:digit:]]\+')"
+		        [ -n "$aheadN" ] && marks+=" \u21e1${aheadN}"
+		        [ -n "$behindN" ] && marks+=" \u21e3${behindN}"
 
 		fi;
 
@@ -55,10 +83,56 @@ prompt_git() {
 
 		[ -n "${s}" ] && s=" [${s}]";
 
-		echo -e "${1}${branchName}${2}${s}";
+		echo -e "${1}\ue0a0 ${branchName}${2}${s}${marks}";
 	else
 		return;
 	fi;
+}
+
+prompt_project_infos() {
+	local PACKAGE_VERSION='';
+	local RUNTIME_VERSION='';
+
+	#if ! [ -x "$(command -v git)" ]; then
+	#  echo 'Error: git is not installed.' >&2
+	#  exit 1
+	#fi
+
+	# js project
+	if [ -e package.json ]; then
+		if [ -x "$(command -v node)" ]; then
+			PACKAGE_VERSION="$(node -p -e "require('./package.json').version")"
+			RUNTIME_VERSION="$(node --version)"
+		fi;
+
+		echo -e "${white} is \U1F4E6 ${blue}${PACKAGE_VERSION} ${white}via ${green}\U2B22 ${RUNTIME_VERSION}";
+	fi;
+
+	# java/maven project
+	if [ -e pom.xml ]; then
+		if [ -x "$(command -v java)" ]; then
+			# mvn help:evaluate -Dexpression=project.version | grep -v '^['
+			# or
+			# grep version pom.xml | grep -v -e '<?xml|~'| head -n 1 | sed 's///' | sed 's/</version>//'| awk '{print $1}'
+			PACKAGE_VERSION="mvn-ver"
+			RUNTIME_VERSION="$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)"/\1/p;')"
+		fi;
+
+		echo -e "${white} is \U1F4E6 ${blue}${PACKAGE_VERSION} ${white}via ${green}\u2615 ${RUNTIME_VERSION}";
+	fi;
+
+	# java/gradle project
+	#if [ -z `ls .gradle` ]; then
+	#	if [ -x "$(command -v java)" ]; then
+	#		PACKAGE_VERSION="gradle-ver"
+	#		RUNTIME_VERSION="$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)"/\1/p;')"
+	#	fi;
+	#
+	#	echo -e "${white} is \U1F4E6 ${blue}${PACKAGE_VERSION} ${white}via ${green}\u2615 ${RUNTIME_VERSION}";
+	#fi
+
+	# PACKAGE_VERSION='0';
+	# RUNTIME_VERSION="$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)"/\1/p;')"
 }
 
 if tput setaf 1 &> /dev/null; then
@@ -107,13 +181,17 @@ fi;
 
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${userStyle}\]\u"; # username
+
+#PS1+="\[${bold}\]\n"; # newline
+PS1+="\n";
+
+PS1+="\${userStyle}\]\u"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
 PS1+="\[${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
+PS1+="\$(prompt_project_infos)";
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
