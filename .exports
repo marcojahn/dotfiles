@@ -13,3 +13,6 @@ export NVM_SYMLINK_CURRENT=true
 #export DOCKER_HOST="tcp://boot2docker:2376"
 #export DOCKER_TLS_VERIFY=1
 #export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
+
+# http://arstechnica.com/civis/viewtopic.php?f=19&t=147601
+export LOCATION=$(/usr/sbin/scselect 2>&1 | perl -ne 'if (m/^\s+\*\s+(\S+)\s+\((.+)\)$/) { print "$2\n"; }')

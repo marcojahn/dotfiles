@@ -92,7 +92,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/mjahn/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -167,7 +167,7 @@
 	# Use the Git 1.x.x default to avoid errors on machines with old Git
 	# installations. To use `simple` instead, add this to your `~/.extra` file:
 	# `git config --global push.default simple`. See http://git.io/mMah-w.
-	default = matching
+	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
@@ -182,6 +182,9 @@
 [user]
 	name = Marco Jahn
 	email = marco.jahn@gmail.com
+[includeIf "gitdir:~/Projects/DB-Systel/"]
+	path = ~/Projects/DB-Systel/.gitconfig
+
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
@@ -191,3 +194,10 @@
 	prompt = false
 [mergetool]
 	prompt = false
+[commit]
+	template = /Users/mjahn/.stCommitMsg
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
