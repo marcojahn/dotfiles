@@ -1,0 +1,2 @@
+colo delek
+syntax on
