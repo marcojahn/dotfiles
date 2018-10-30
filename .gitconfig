@@ -110,6 +110,7 @@
 
 	# Prevent file permissions (changes) to be synced (e.g. chmod...)
 	filemode = false
+	editor = vim
 
 [color]
 
