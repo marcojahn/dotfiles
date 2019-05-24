@@ -5,7 +5,7 @@ export PATH="/usr/local/homebrew/bin:/usr/local/homebrew/sbin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
+# * ~/.extra can be used for other settings you donât want to commit.
 for file in ~/.{path,exports,bash_prompt,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
@@ -78,6 +78,22 @@ fi
 
 #OFF#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# https://github.com/changyuheng/fz
+# z, zz, zfz
+if [ -d ~/.bash_completion.d ]; then
+  for file in ~/.bash_completion.d/*; do
+    . $file
+  done
+fi
+
+###-tns-completion-start-###
+if [ -f /Users/mjahn/.tnsrc ]; then 
+    source /Users/mjahn/.tnsrc 
+fi
+###-tns-completion-end-###
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/mjahn/.sdkman"
 [[ -s "/Users/mjahn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mjahn/.sdkman/bin/sdkman-init.sh"
+
+export PATH="/Applications/Fortify/Fortify_SCA_and_Apps_18.20/bin:$PATH"
