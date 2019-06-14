@@ -16,10 +16,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-## sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && . "$SDKMAN_DIR/bin/sdkman-init.sh" # This loads sdkman
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
@@ -91,9 +87,5 @@ if [ -f /Users/mjahn/.tnsrc ]; then
     source /Users/mjahn/.tnsrc 
 fi
 ###-tns-completion-end-###
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/mjahn/.sdkman"
-[[ -s "/Users/mjahn/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mjahn/.sdkman/bin/sdkman-init.sh"
 
 export PATH="/Applications/Fortify/Fortify_SCA_and_Apps_18.20/bin:$PATH"
