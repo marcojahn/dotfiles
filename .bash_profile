@@ -89,3 +89,4 @@ fi
 ###-tns-completion-end-###
 
 export PATH="/Applications/Fortify/Fortify_SCA_and_Apps_18.20/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
